@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{d4e44c4d-1a35-4cc4-9768-f8bbdb7938b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Math">
+      <UniqueIdentifier>{4c23a4ac-7aac-41e7-949b-f7c38886e441}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Core">
+      <UniqueIdentifier>{13779b1c-1603-4de6-9bc6-c4442b71fbf4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Graphics">
+      <UniqueIdentifier>{5c16ea65-abb8-4330-9412-a04b7890667a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Utils">
+      <UniqueIdentifier>{26b54b95-935b-4976-8414-c3609562e661}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Input">
+      <UniqueIdentifier>{f40632a7-a2af-41d9-96d4-d62748123f02}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Sources\Math\Math.cpp">
+      <Filter>Sources\Math</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sources\Math\Math.h">
+      <Filter>Sources\Math</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sources\Math\Math.inl" />
+  </ItemGroup>
+</Project>
