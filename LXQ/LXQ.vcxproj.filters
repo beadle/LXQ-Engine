@@ -32,6 +32,8 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Sources\Math\Math.inl" />
+    <None Include="Sources\Math\Math.inl">
+      <Filter>Sources\Math</Filter>
+    </None>
   </ItemGroup>
 </Project>
