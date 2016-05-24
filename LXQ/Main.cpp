@@ -2,6 +2,7 @@
 
 #include "Math/Math.h"
 #include "SimpleMath.h"
+#include "d3dx11effect.h"
 
 using namespace LXQ;
 
