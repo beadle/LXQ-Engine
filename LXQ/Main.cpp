@@ -14,8 +14,9 @@ using namespace LXQ;
 int WINAPI
 WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, int showCmd)
 {
-	LXQ::logger::Initialize();
-	LXQ::logger::Finalize();
+	Logger::Initialize();
+
+	Logger::Finalize();
 
 	system("Pause");
 	return 0;
