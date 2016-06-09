@@ -4,9 +4,6 @@
     <Filter Include="Sources">
       <UniqueIdentifier>{d4e44c4d-1a35-4cc4-9768-f8bbdb7938b6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sources\Math">
-      <UniqueIdentifier>{4c23a4ac-7aac-41e7-949b-f7c38886e441}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Sources\Core">
       <UniqueIdentifier>{13779b1c-1603-4de6-9bc6-c4442b71fbf4}</UniqueIdentifier>
     </Filter>
@@ -16,24 +13,65 @@
     <Filter Include="Sources\Utils">
       <UniqueIdentifier>{26b54b95-935b-4976-8414-c3609562e661}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sources\Input">
+    <Filter Include="Sources\Engine">
+      <UniqueIdentifier>{9a67c761-cd6f-4c54-9bad-e6f32d401ac2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Resource">
+      <UniqueIdentifier>{b94b7ca4-92ab-4a11-94e1-26af32b9d464}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Core\Math">
+      <UniqueIdentifier>{4c23a4ac-7aac-41e7-949b-f7c38886e441}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Engine\Object">
+      <UniqueIdentifier>{b1c8bdbd-4dc0-4443-b200-432c6158264b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Engine\Input">
       <UniqueIdentifier>{f40632a7-a2af-41d9-96d4-d62748123f02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Resource\Shaders">
+      <UniqueIdentifier>{26db6918-687f-461f-b65f-7037fe6048a6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Sources\Math\Math.cpp">
-      <Filter>Sources\Math</Filter>
+    <ClCompile Include="Sources\Core\IComponent.cpp">
+      <Filter>Sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Core\IObject.cpp">
+      <Filter>Sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Core\IEntity.cpp">
+      <Filter>Sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Core\Logger.cpp" />
+    <ClCompile Include="Sources\Core\Math\Math.cpp">
+      <Filter>Sources\Core\Math</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Sources\Math\Math.h">
-      <Filter>Sources\Math</Filter>
+    <ClInclude Include="Sources\Core\IComponent.h">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Core\IObject.h">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Core\IEntity.h">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\LXQ.h" />
+    <ClInclude Include="Sources\Core\Logger.h" />
+    <ClInclude Include="Sources\Core\Math\Math.h">
+      <Filter>Sources\Core\Math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Sources\Math\Math.inl">
-      <Filter>Sources\Math</Filter>
+    <None Include="Sources\Core\Math\Math.inl">
+      <Filter>Sources\Core\Math</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Sources\Resource\Shaders\Hello.fx">
+      <Filter>Sources\Resource\Shaders</Filter>
+    </CustomBuild>
   </ItemGroup>
 </Project>
