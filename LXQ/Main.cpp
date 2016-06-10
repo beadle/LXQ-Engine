@@ -16,6 +16,8 @@ WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, int showCmd)
 {
 	Logger::Initialize();
 
+	LOGI << "ÎÒÊÇÐ¤ÏÄ";
+
 	Logger::Finalize();
 
 	system("Pause");

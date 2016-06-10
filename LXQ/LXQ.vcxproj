@@ -80,6 +80,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\Core\IIdentity.cpp" />
     <ClCompile Include="Sources\Core\Logger.cpp" />
     <ClCompile Include="Sources\Core\IEntity.cpp" />
     <ClCompile Include="Sources\Core\IComponent.cpp" />
@@ -88,6 +89,7 @@
     <ClCompile Include="Sources\Core\Math\Math.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Sources\Core\IIdentity.h" />
     <ClInclude Include="Sources\Core\Logger.h" />
     <ClInclude Include="Sources\Core\IEntity.h" />
     <ClInclude Include="Sources\Core\IComponent.h" />

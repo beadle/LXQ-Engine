@@ -30,11 +30,22 @@ public:
 	template<class T>
 	const T* GetComponent() const;
 
+	template<class T>
+	bool HasComponent() const;
+
 private:
 	typedef std::unordered_map<std::type_index, std::unique_ptr<IComponent>> ComponentMap;
 	
 	ComponentMap mComponents;
 };
+
+
+template<class T>
+bool IObject::HasComponent() const
+{
+	auto it = this->mComponents.find(std::type_index(typeid(T)));
+	return it != this->mComponents.end();
+}
 
 template<class T>
 T* IObject::GetComponent()

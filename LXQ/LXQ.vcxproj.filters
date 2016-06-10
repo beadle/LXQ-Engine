@@ -43,9 +43,14 @@
     <ClCompile Include="Sources\Core\IEntity.cpp">
       <Filter>Sources\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Core\Logger.cpp" />
     <ClCompile Include="Sources\Core\Math\Math.cpp">
       <Filter>Sources\Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Core\Logger.cpp">
+      <Filter>Sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Core\IIdentity.cpp">
+      <Filter>Sources\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -58,10 +63,17 @@
     <ClInclude Include="Sources\Core\IEntity.h">
       <Filter>Sources\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\LXQ.h" />
-    <ClInclude Include="Sources\Core\Logger.h" />
     <ClInclude Include="Sources\Core\Math\Math.h">
       <Filter>Sources\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Core\Logger.h">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Core\IIdentity.h">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\LXQ.h">
+      <Filter>Sources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

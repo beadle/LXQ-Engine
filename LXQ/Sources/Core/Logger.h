@@ -5,42 +5,35 @@
 
 namespace Logger
 {
-	class DebugAppender : public plog::IAppender
-	{
-	public:
-		virtual void write(const plog::Record& record); 
-	};
-
 	void Initialize();
 	void Finalize();
+
+	std::string lastErrorAsString();
 }
-
-
-std::string lastErrorAsString();
 
 // Replacement for std::assert
 #ifdef _DEBUG
-#define ASSERT(expression)                                                     \
+#define ASSERT(expression)                                                 \
 {                                                                          \
 auto e = expression;                                                       \
 if (!e) {                                                                  \
-    LOGF << "Assert failed with " #expression << " = " << e << "\n"          \
-		<< "\tWin32 Error Status:\n"                                        \
-		<< "\t\tError Code:    " << GetLastError() << "\n"                  \
-		<< "\t\tError Message: " << lastErrorAsString() << "\n";            \
+    LOGF << "Assert failed with " #expression << " = " << e << "\n"        \
+		<< "\tWin32 Error Status:\n"                                       \
+		<< "\t\tError Code:    " << GetLastError() << "\n"                 \
+		<< "\t\tError Message: " << Logger::lastErrorAsString() << "\n";   \
 }                                                                          \
 assert(e);                                                                 \
 }
 
 #else
-#define ASSERT(expression)                                                     \
+#define ASSERT(expression)                                                 \
 {                                                                          \
 auto e = expression;                                                       \
 if (!e) {                                                                  \
-    LOGF << "Assert failed with " #expression << " = " << e << "\n"          \
-        << "\tWin32 Error Status:\n"                                        \
-        << "\t\tError Code:    " << GetLastError() << "\n"                  \
-        << "\t\tError Message: " << lastErrorAsString() << "\n";            \
+    LOGF << "Assert failed with " #expression << " = " << e << "\n"        \
+        << "\tWin32 Error Status:\n"                                       \
+        << "\t\tError Code:    " << GetLastError() << "\n"                 \
+        << "\t\tError Message: " << Logger::lastErrorAsString() << "\n";   \
 }                                                                          \
 }
 #endif
