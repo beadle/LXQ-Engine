@@ -42,7 +42,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>Sources;Sources\Core;E:\Library\boost_1_60_0;..\DirectXTK\Inc;..\Effects11\inc;..\ThirdParty\plog\include;$(IncludePath)</IncludePath>
+    <IncludePath>Sources\Engine;Sources;Sources\Core;E:\Library\boost_1_60_0;..\DirectXTK\Inc;..\Effects11\inc;..\ThirdParty\plog\include;..\ThirdParty\json11;$(IncludePath)</IncludePath>
+    <LibraryPath>..\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -55,10 +56,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>json11.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -80,22 +84,38 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Sources\Core\IIdentity.cpp" />
-    <ClCompile Include="Sources\Core\Logger.cpp" />
-    <ClCompile Include="Sources\Core\IEntity.cpp" />
+    <ClCompile Include="Sources\Core\Singleton.cpp" />
+    <ClCompile Include="Sources\Engine\Gameplay.cpp" />
+    <ClCompile Include="Sources\Engine\IScene.cpp" />
+    <ClCompile Include="Sources\Core\ObjectFactor.cpp" />
+    <ClCompile Include="Sources\Core\ObjectHandler.cpp" />
+    <ClCompile Include="Sources\Core\IEvent.cpp" />
+    <ClCompile Include="Sources\Core\IClass.cpp" />
+    <ClCompile Include="Sources\Core\GameObject.cpp" />
     <ClCompile Include="Sources\Core\IComponent.cpp" />
     <ClCompile Include="Sources\Core\IObject.cpp" />
+    <ClCompile Include="Sources\Core\Logger.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Sources\Core\Math\Math.cpp" />
+    <ClCompile Include="Sources\Engine\Component\Transform.cpp" />
+    <ClCompile Include="Sources\Platform\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Sources\Core\IIdentity.h" />
-    <ClInclude Include="Sources\Core\Logger.h" />
-    <ClInclude Include="Sources\Core\IEntity.h" />
+    <ClInclude Include="Sources\Core\Singleton.h" />
+    <ClInclude Include="Sources\Engine\Gameplay.h" />
+    <ClInclude Include="Sources\Engine\IScene.h" />
+    <ClInclude Include="Sources\Core\ObjectFactor.h" />
+    <ClInclude Include="Sources\Core\ObjectHandler.h" />
+    <ClInclude Include="Sources\Core\IEvent.h" />
+    <ClInclude Include="Sources\Core\IClass.h" />
+    <ClInclude Include="Sources\Core\GameObject.h" />
     <ClInclude Include="Sources\Core\IComponent.h" />
     <ClInclude Include="Sources\Core\IObject.h" />
+    <ClInclude Include="Sources\Core\Logger.h" />
     <ClInclude Include="Sources\LXQ.h" />
     <ClInclude Include="Sources\Core\Math\Math.h" />
+    <ClInclude Include="Sources\Engine\Component\Transform.h" />
+    <ClInclude Include="Sources\Platform\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Sources\Core\Math\Math.inl" />

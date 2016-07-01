@@ -1,70 +1,60 @@
 #pragma once
 
-#include <unordered_map>
-#include <typeindex>
-#include <memory>
+#include "LXQ.h"
+#include "IClass.h"
+#include <string>
 
 
-class IComponent;
+extern IClass* GetClassByName(const std::string& name);
+
+static const int MAX_OBJECTS = 65536;
+extern IObject* gHandlerTable[];
 
 
-/*!
- * \class IObject
- *
- * \brief 所有游戏对象的基类，封装Component-Based机制
- */
+#define OBJECT_DECLARE(className)				\
+public:											\
+	virtual IClass* GetClass() {				\
+		return ::GetClassByName(#className);	\
+	}											\
+												\
+	static IClass* Class() {					\
+		return ::GetClassByName(#className);	\
+	}
+
+
 class IObject
 {
+	OBJECT_DECLARE(IObject)
+public:
+	// generate an unique object ID in runtime
+	static int GenerateUniqueObjectID();
+
+	// find a empty slot in object handler table
+	static int FindFreeSlotInHandlerTable();
+
 public:
 	IObject();
-	~IObject();
-	
-	void AddComponent(std::unique_ptr<IComponent>& component);
+	virtual ~IObject();
 
+	// property getters
+	int GetHandlerIndex() const { return _handlerIndex; }
+	int GetUniqueID() const { return _uniqueID; }
+
+	// type inspect
 	template<class T>
-	void RemoveComponent();
+	bool IsInstanceOf();
 
-	template<class T>
-	T* GetComponent();
+protected:
+	int _handlerIndex;
+	int _uniqueID;
 
-	template<class T>
-	const T* GetComponent() const;
+	friend class ObjectHandler;
 
-	template<class T>
-	bool HasComponent() const;
-
-private:
-	typedef std::unordered_map<std::type_index, std::unique_ptr<IComponent>> ComponentMap;
-	
-	ComponentMap mComponents;
 };
 
-
 template<class T>
-bool IObject::HasComponent() const
+bool IObject::IsInstanceOf()
 {
-	auto it = this->mComponents.find(std::type_index(typeid(T)));
-	return it != this->mComponents.end();
+	return dynamic_cast<T*>(this) != nullptr;
 }
 
-template<class T>
-T* IObject::GetComponent()
-{
-	auto it = this->mComponents.find(std::type_index(typeid(T)));
-	if (it != this->mComponents.end())
-		return static_cast<T*>(it->second.get());
-	else
-		return nullptr;
-}
-
-template<class T>
-const T* IObject::GetComponent() const
-{
-	return const_cast<T*>((const_cast<const IObject*>(this))->GetComponent<T>());
-}
-
-template<class T>
-inline void IObject::RemoveComponent()
-{
-	this->mComponents.erase(std::type_index(typeid(T)));
-}

@@ -1,25 +1,15 @@
-#include <Windows.h>
+#include "Platform/Window.h"
 
-#include "Math/Math.h"
-#include "SimpleMath.h"
-#include "d3dx11effect.h"
-
-#include "Core/IObject.h"
-#include "Core/IComponent.h"
-
-#include "Core/Logger.h"
-
-using namespace LXQ;
 
 int WINAPI
 WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, int showCmd)
 {
-	Logger::Initialize();
+	Window window;
+	window.Initialize();
+	
+	window.Run();
 
-	LOGI << "ÎÒÊÇÐ¤ÏÄ";
+	window.Finalize();
 
-	Logger::Finalize();
-
-	system("Pause");
 	return 0;
 }

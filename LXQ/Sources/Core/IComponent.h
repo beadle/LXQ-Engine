@@ -3,15 +3,21 @@
 #include "IObject.h"
 
 
-/*!
- * \class IComponent
- *
- * \brief 组件基类
- */
+class GameObject;
+
 class IComponent : public IObject
 {
+	OBJECT_DECLARE(IComponent)
 public:
 	IComponent();
-	~IComponent();
+	virtual ~IComponent();
+
+protected:
+	virtual void OnAttach(GameObject* holder);
+	virtual void OnDetach();
+
+	friend class GameObject;
+protected:
+	GameObject* _holder;
 };
 

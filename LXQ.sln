@@ -5,6 +5,7 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LXQ", "LXQ\LXQ.vcxproj", "{2D6E68FA-652C-4C48-8DEC-C2F406A3B552}"
 	ProjectSection(ProjectDependencies) = postProject
+		{926E051C-FF60-4871-9200-62F8547F61FF} = {926E051C-FF60-4871-9200-62F8547F61FF}
 		{DF460EAB-570D-4B50-9089-2E2FC801BF38} = {DF460EAB-570D-4B50-9089-2E2FC801BF38}
 		{E0B52AE7-E160-4D32-BF3F-910B785E5A8E} = {E0B52AE7-E160-4D32-BF3F-910B785E5A8E}
 	EndProjectSection
@@ -12,6 +13,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DirectXTK_Desktop_2013", "DirectXTK\DirectXTK_Desktop_2013.vcxproj", "{E0B52AE7-E160-4D32-BF3F-910B785E5A8E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Effects11", "Effects11\Effects11_2013.vcxproj", "{DF460EAB-570D-4B50-9089-2E2FC801BF38}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "json11", "ThirdParty\json11\json11.vcxproj", "{926E051C-FF60-4871-9200-62F8547F61FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +59,18 @@ Global
 		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Release|Win32.Build.0 = Release|Win32
 		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Release|x64.ActiveCfg = Release|x64
 		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Release|x64.Build.0 = Release|x64
+		{926E051C-FF60-4871-9200-62F8547F61FF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{926E051C-FF60-4871-9200-62F8547F61FF}.Debug|Win32.Build.0 = Debug|Win32
+		{926E051C-FF60-4871-9200-62F8547F61FF}.Debug|x64.ActiveCfg = Debug|x64
+		{926E051C-FF60-4871-9200-62F8547F61FF}.Debug|x64.Build.0 = Debug|x64
+		{926E051C-FF60-4871-9200-62F8547F61FF}.Profile|Win32.ActiveCfg = Release|Win32
+		{926E051C-FF60-4871-9200-62F8547F61FF}.Profile|Win32.Build.0 = Release|Win32
+		{926E051C-FF60-4871-9200-62F8547F61FF}.Profile|x64.ActiveCfg = Release|x64
+		{926E051C-FF60-4871-9200-62F8547F61FF}.Profile|x64.Build.0 = Release|x64
+		{926E051C-FF60-4871-9200-62F8547F61FF}.Release|Win32.ActiveCfg = Release|Win32
+		{926E051C-FF60-4871-9200-62F8547F61FF}.Release|Win32.Build.0 = Release|Win32
+		{926E051C-FF60-4871-9200-62F8547F61FF}.Release|x64.ActiveCfg = Release|x64
+		{926E051C-FF60-4871-9200-62F8547F61FF}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

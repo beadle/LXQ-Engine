@@ -910,6 +910,14 @@ Vector3::Clamp(const Vector3& vmin, const Vector3& vmax, Vector3& result) const
 	XMStoreFloat3(&result, X);
 }
 
+inline std::string
+Vector3::ToString()
+{
+	char tmp[30];
+	sprintf_s(tmp, "(%.2f, %.2f, %.2f)", x, y, z);
+	return tmp;
+}
+
 //------------------------------------------------------------------------------
 // Static functions
 //------------------------------------------------------------------------------
