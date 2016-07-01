@@ -4,12 +4,11 @@
 int WINAPI
 WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, int showCmd)
 {
-	Window window;
-	window.Initialize();
+	auto* window = Window::GetInstance();
 	
-	window.Run();
-
-	window.Finalize();
+	window->Initialize();
+	window->Run();
+	window->Finalize();
 
 	return 0;
 }

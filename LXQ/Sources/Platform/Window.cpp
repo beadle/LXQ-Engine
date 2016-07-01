@@ -1,15 +1,19 @@
 #include <fstream>
+#include <time.h>
+#include <chrono>
 
 #include "Window.h"
 #include "Gameplay.h"
 #include "Logger.h"
 #include "json11.hpp"
+#include "Time.h"
 
-
-static Window* ApplicationHandle = nullptr;
 
 Window::Window()
 {
+	_deltaTime = 0.0;
+	_frameRate = 0;
+	_frameInterval.QuadPart = 0;
 }
 
 
@@ -31,9 +35,14 @@ void Window::Run()
 	MSG msg;
 	bool done, result;
 
-
 	// Initialize the message structure.
 	ZeroMemory(&msg, sizeof(MSG));
+
+	// Main message loop:
+	LARGE_INTEGER nLast;
+	LARGE_INTEGER nNow;
+	
+	QueryPerformanceCounter(&nLast);
 
 	// Loop until there is a quit message from the window or the user.
 	done = false;
@@ -53,11 +62,21 @@ void Window::Run()
 		}
 		else
 		{
-			// Otherwise do the frame processing.
-			result = Gameplay::GetInstance()->MainLoop();
-			if (!result)
+			QueryPerformanceCounter(&nNow);
+			if (nNow.QuadPart - nLast.QuadPart > _frameInterval.QuadPart)
 			{
-				done = true;
+				LARGE_INTEGER nFreq;
+				QueryPerformanceFrequency(&nFreq);
+				_deltaTime = double(nNow.QuadPart - nLast.QuadPart) / nFreq.QuadPart;
+
+				nLast.QuadPart = nNow.QuadPart - (nNow.QuadPart % _frameInterval.QuadPart);
+
+				// Otherwise do the frame processing.
+				result = Gameplay::GetInstance()->MainLoop();
+				if (!result)
+				{
+					done = true;
+				}
 			}
 		}
 
@@ -114,6 +133,15 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT umessage, WPARAM wparam, LPARAM lparam)
 	}
 }
 
+void Window::SetFrameRate(int rate)
+{
+	_frameRate = rate;
+	double interval = 1.0 / rate;
+	LARGE_INTEGER nFreq;
+	QueryPerformanceFrequency(&nFreq);
+	_frameInterval.QuadPart = (LONGLONG)(interval * nFreq.QuadPart);
+}
+
 void Window::InitializeWindow()
 {
 	std::ifstream ifs("_Config/Engine.json");
@@ -123,12 +151,11 @@ void Window::InitializeWindow()
 	std::string err;
 	auto config = json11::Json::parse(content, err)["window"];
 
+	SetFrameRate(config["frameRate"].int_value());
+
 	WNDCLASSEX wc;
 	DEVMODE dmScreenSettings;
 	int posX, posY;
-
-	// Get an external pointer to this object.	
-	ApplicationHandle = this;
 
 	// Get the instance of this application.
 	_hinstance = GetModuleHandle(NULL);
@@ -228,6 +255,4 @@ void Window::ShutdownWindows()
 	UnregisterClass(_applicationName, _hinstance);
 	_hinstance = NULL;
 
-	// Release the pointer to this class.
-	ApplicationHandle = NULL;
 }

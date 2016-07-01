@@ -1,5 +1,5 @@
 #include "IObject.h"
-#include "LXQ.h"
+#include "Logger.h"
 
 
 static int gUniqueID = 1;

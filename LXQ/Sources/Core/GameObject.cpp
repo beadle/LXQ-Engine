@@ -1,8 +1,9 @@
 #include "GameObject.h"
 #include "IComponent.h"
 #include "ObjectFactor.h"
+#include "Logger.h"
 
-#include "Engine/Component/Transform.h"
+#include "Component/Transform.h"
 
 
 
@@ -50,7 +51,7 @@ void GameObject::GiveChild(GameObject* parent, GameObject* child)
 			parent->_children.push_back(std::move(ptr));
 			child->onAttachParent(parent);
 
-			break;;
+			break;
 		}
 	}
 }

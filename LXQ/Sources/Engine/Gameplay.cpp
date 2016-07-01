@@ -1,5 +1,7 @@
 #include "Gameplay.h"
 #include "IScene.h"
+#include "Logger.h"
+#include "Platform/Time.h"
 
 
 Gameplay::Gameplay()
@@ -33,7 +35,7 @@ void Gameplay::Tick()
 {
 	// TODO: update all objects
 
-	LOGI << "TICK";
+	LOGI << "TICK: " << Time::GetDeltaTime();
 }
 
 void Gameplay::Draw()

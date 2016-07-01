@@ -1,4 +1,5 @@
 #include "IComponent.h"
+#include "Logger.h"
 
 
 IComponent::IComponent():

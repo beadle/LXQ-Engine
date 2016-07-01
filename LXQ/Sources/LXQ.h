@@ -50,6 +50,3 @@ typedef unsigned short						float16;
 typedef float								float32;
 typedef double								float64;
 typedef long double							float80;
-
-
-#include "Logger.h"

@@ -99,6 +99,7 @@
     <ClCompile Include="Sources\Core\Math\Math.cpp" />
     <ClCompile Include="Sources\Engine\Component\Transform.cpp" />
     <ClCompile Include="Sources\Platform\Window.cpp" />
+    <ClCompile Include="Sources\Platform\Time.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\Core\Singleton.h" />
@@ -116,6 +117,7 @@
     <ClInclude Include="Sources\Core\Math\Math.h" />
     <ClInclude Include="Sources\Engine\Component\Transform.h" />
     <ClInclude Include="Sources\Platform\Window.h" />
+    <ClInclude Include="Sources\Platform\Time.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Sources\Core\Math\Math.inl" />

@@ -82,6 +82,7 @@
     <ClCompile Include="Sources\Platform\Window.cpp">
       <Filter>Sources\Platform</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\Platform\Time.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\Core\Logger.h">
@@ -129,6 +130,7 @@
     <ClInclude Include="Sources\Platform\Window.h">
       <Filter>Sources\Platform</Filter>
     </ClInclude>
+    <ClInclude Include="Sources\Platform\Time.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Sources\Resource\Shaders\Hello.fx">
