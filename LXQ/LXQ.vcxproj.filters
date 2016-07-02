@@ -83,6 +83,7 @@
       <Filter>Sources\Platform</Filter>
     </ClCompile>
     <ClCompile Include="Sources\Platform\Time.cpp" />
+    <ClCompile Include="Sources\Core\Uncopyable.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\Core\Logger.h">
@@ -131,6 +132,7 @@
       <Filter>Sources\Platform</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Platform\Time.h" />
+    <ClInclude Include="Sources\Core\Uncopyable.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Sources\Resource\Shaders\Hello.fx">

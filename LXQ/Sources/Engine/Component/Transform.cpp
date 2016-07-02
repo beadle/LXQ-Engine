@@ -173,10 +173,9 @@ void Transform::OnAttach(GameObject* holder)
 
 	this->TryAttachParent();
 
-	holder->EventParentChanged.Register(
-		this,
-		std::bind(&Transform::OnEventHolderParentChanged, this, std::placeholders::_1)
-		);
+	holder->EventParentChanged.Register(this, [this](GameObject* oldParent){
+		this->TryAttachParent();
+	});
 }
 
 void Transform::OnDetach()

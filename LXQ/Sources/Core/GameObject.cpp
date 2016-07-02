@@ -13,12 +13,6 @@ _parent(nullptr)
 	this->CreateComponent<Transform>();
 }
 
-
-GameObject::~GameObject()
-{
-	this->RemoveAllChildren();
-}
-
 void GameObject::AddComponent(IComponent* component)
 {
 	_components[std::type_index(typeid(*component))] = std::move(ComponentPtr(component));
@@ -109,6 +103,11 @@ const GameObject* GameObject::GetChild(int uniqueID) const
 	return const_cast<const GameObject*>(const_cast<const GameObject*>(this)->GetChild(uniqueID));
 }
 
+Transform* GameObject::GetTransform()
+{
+	return GetComponent<Transform>();
+}
+
 void GameObject::onAttachParent(GameObject* parent)
 {
 	ASSERT(_parent == nullptr);
@@ -127,9 +126,4 @@ void GameObject::onDetachParent()
 	_parent = nullptr;
 
 	EventParentChanged.Notify(oldParent);
-}
-
-Transform* GameObject::GetTransform()
-{
-	return GetComponent<Transform>();
 }

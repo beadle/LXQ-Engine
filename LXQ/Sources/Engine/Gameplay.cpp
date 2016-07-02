@@ -2,6 +2,7 @@
 #include "IScene.h"
 #include "Logger.h"
 #include "Platform/Time.h"
+#include "ObjectFactor.h"
 
 
 Gameplay::Gameplay()
@@ -15,7 +16,7 @@ Gameplay::~Gameplay()
 
 void Gameplay::Initialize()
 {
-	_scene = std::make_unique<IScene>();
+	_scene.reset(ObjectFactor::Create<IScene>());
 }
 
 void Gameplay::Finalize()

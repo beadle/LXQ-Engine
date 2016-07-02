@@ -5,6 +5,7 @@
 #include "LXQ.h"
 #include "IObject.h"
 #include "IEvent.h"
+#include "Uncopyable.h"
 
 
 class IComponent;
@@ -19,13 +20,9 @@ enum class EventTypeComponentChanged
 };
 
 
-class GameObject : public IObject
+class GameObject : public IObject, public Uncopyable
 {
 	OBJECT_DECLARE(GameObject)
-public:
-	GameObject();
-	virtual ~GameObject();
-
 public:
 	void AddComponent(IComponent* component);
 	template<class T>
@@ -59,9 +56,14 @@ public:
 	IEvent<IComponent*, int> EventComponentChanged;
 
 protected:
+	// shield native creator
+	// use factory method [GameObject::CreateChild] to create a GameObject
+	GameObject();
+
 	void onAttachParent(GameObject* parent);
 	void onDetachParent();
 
+	friend class ObjectFactor;
 protected:
 	GameObject* _parent;
 

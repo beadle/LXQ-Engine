@@ -5,9 +5,14 @@
 
 class IScene : public GameObject
 {
+	OBJECT_DECLARE(IScene)
 public:
-	IScene();
 	~IScene();
 
+protected:
+	// shield native creator
+	IScene();
+
+	friend class ObjectFactor;
 };
 

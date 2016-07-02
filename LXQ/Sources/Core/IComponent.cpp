@@ -7,11 +7,6 @@ _holder(nullptr)
 {
 }
 
-
-IComponent::~IComponent()
-{
-}
-
 void IComponent::OnAttach(GameObject* holder)
 {
 	ASSERT(_holder == nullptr);
