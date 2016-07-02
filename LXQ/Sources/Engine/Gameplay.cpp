@@ -17,6 +17,14 @@ Gameplay::~Gameplay()
 void Gameplay::Initialize()
 {
 	_scene.reset(ObjectFactor::Create<IScene>());
+
+	auto child1 = _scene->CreateChild();
+	auto child2 = _scene->CreateChild();
+
+	_scene->RemoveChild(child1);
+
+	child1 = _scene->CreateChild();
+
 }
 
 void Gameplay::Finalize()

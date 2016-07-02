@@ -5,11 +5,54 @@
 #include <string>
 
 
+class IObject;
+
+class HandlerTable
+{
+public:
+	static int AddHandler(IObject* pObj);
+
+	static void RemoveHandler(int index, IObject* pObj);
+
+	static IObject* ToObject(int index);
+
+protected:
+	struct Slot
+	{
+		IObject* pObject;
+		int emptyIndex;
+
+		Slot() {
+			Reset();
+		}
+
+		// reset to empty state
+		void Reset() {
+			pObject = nullptr;
+			emptyIndex = -1;
+		}
+
+		// place object pointer
+		void Place(IObject* pObj) {
+			pObject = pObj;
+			emptyIndex = -1;
+		}
+
+		// tag an empty slot
+		void Tag(int index) {
+			pObject = nullptr;
+			emptyIndex = index;
+		}
+	};
+
+	static const int MAX_OBJECTS;
+
+	static int sCurrIndex;
+	static Slot sHandlerTable[];
+};
+
+
 extern IClass* GetClassByName(const std::string& name);
-
-static const int MAX_OBJECTS = 65536;
-extern IObject* gHandlerTable[];
-
 
 #define OBJECT_DECLARE(className)				\
 public:											\

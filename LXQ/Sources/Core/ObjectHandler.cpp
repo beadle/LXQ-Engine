@@ -23,7 +23,7 @@ ObjectHandler::~ObjectHandler()
 
 IObject* ObjectHandler::Get()
 {
-	auto pObject = gHandlerTable[_handlerIndex];
+	auto pObject = HandlerTable::ToObject(_handlerIndex);
 	if (pObject && pObject->_uniqueID == _uniqueID)
 	{
 		return pObject;
