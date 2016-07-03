@@ -1,35 +1,27 @@
 #include "Gameplay.h"
 #include "IScene.h"
 #include "Logger.h"
-#include "Platform/Time.h"
 #include "ObjectFactor.h"
 
+#include "Platform/Time.h"
+#include "Graphics/IDevice.h"
 
-Gameplay::Gameplay()
-{
-}
-
-
-Gameplay::~Gameplay()
-{
-}
 
 void Gameplay::Initialize()
 {
 	_scene.reset(ObjectFactor::Create<IScene>());
 
-	auto child1 = _scene->CreateChild();
-	auto child2 = _scene->CreateChild();
-
-	_scene->RemoveChild(child1);
-
-	child1 = _scene->CreateChild();
-
+	_device.reset(ObjectFactor::Create<IDevice>());
+	_device->Initialize();
 }
 
 void Gameplay::Finalize()
 {
+	_scene->RemoveAllChildren();
 	_scene.reset();
+
+	_device->Finalize();
+	_device.reset();
 }
 
 bool Gameplay::MainLoop()

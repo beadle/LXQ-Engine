@@ -50,3 +50,16 @@ typedef unsigned short						float16;
 typedef float								float32;
 typedef double								float64;
 typedef long double							float80;
+
+
+
+#define SAFE_RETAIN(_ref)		\
+	if (_ref)					\
+		_ref->AddRef();
+
+
+#define SAFE_RELEASE(_ref)		\
+	if (_ref) {					\
+		_ref->Release();			\
+		_ref = nullptr;			\
+	}

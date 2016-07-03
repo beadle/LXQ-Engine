@@ -6,6 +6,9 @@ class Singleton
 public:
 	static T* GetInstance();
 
+protected:
+	Singleton() {}
+	~Singleton() {}
 };
 
 template<class T>

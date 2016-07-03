@@ -4,22 +4,12 @@
 
 #include "Window.h"
 #include "Gameplay.h"
+#include "IScene.h"
 #include "Logger.h"
 #include "json11.hpp"
 #include "Time.h"
+#include "Graphics/IDevice.h"
 
-
-Window::Window()
-{
-	_deltaTime = 0.0;
-	_frameRate = 0;
-	_frameInterval.QuadPart = 0;
-}
-
-
-Window::~Window()
-{
-}
 
 void Window::Initialize()
 {
@@ -149,7 +139,7 @@ void Window::InitializeWindow()
 		(std::istreambuf_iterator<char>()));
 
 	std::string err;
-	auto config = json11::Json::parse(content, err)["window"];
+	auto config = json11::Json::parse(content, err)["graphics"];
 
 	SetFrameRate(config["frameRate"].int_value());
 

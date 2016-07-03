@@ -5,13 +5,11 @@
 
 
 class IScene;
+class IDevice;
 
 class Gameplay : public Singleton<Gameplay>
 {
 public:
-	Gameplay();
-	~Gameplay();
-
 	void Initialize();
 	void Finalize();
 
@@ -26,5 +24,6 @@ protected:
 
 protected:
 	std::unique_ptr<IScene> _scene;
+	std::unique_ptr<IDevice> _device;
 };
 

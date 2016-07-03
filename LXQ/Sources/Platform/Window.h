@@ -8,12 +8,12 @@
 class Window : public Singleton<Window>
 {
 public:
-	Window();
-	~Window();
-
 	void Initialize();
 	void Run();
 	void Finalize();
+
+	HWND GetHWND() const { return _hwnd; }
+	bool IsFullScreen() const { return _fullScreen; }
 
 protected:
 	void InitializeWindow();

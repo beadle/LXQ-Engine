@@ -62,7 +62,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>json11.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>json11.lib;d3d11.lib;D3DCompiler.lib;dxgi.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -84,6 +84,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\Graphics\IDevice.cpp" />
     <ClCompile Include="Sources\Core\Singleton.cpp" />
     <ClCompile Include="Sources\Engine\Gameplay.cpp" />
     <ClCompile Include="Sources\Engine\IScene.cpp" />
@@ -103,6 +104,7 @@
     <ClCompile Include="Sources\Core\Uncopyable.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Sources\Graphics\IDevice.h" />
     <ClInclude Include="Sources\Core\Singleton.h" />
     <ClInclude Include="Sources\Engine\Gameplay.h" />
     <ClInclude Include="Sources\Engine\IScene.h" />
