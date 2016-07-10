@@ -82,9 +82,38 @@
     <ClCompile Include="Sources\Platform\Window.cpp">
       <Filter>Sources\Platform</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Platform\Time.cpp" />
-    <ClCompile Include="Sources\Core\Uncopyable.cpp" />
-    <ClCompile Include="Sources\Graphics\IDevice.cpp" />
+    <ClCompile Include="Sources\Graphics\IDevice.cpp">
+      <Filter>Sources\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Platform\Time.cpp">
+      <Filter>Sources\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Core\Uncopyable.cpp">
+      <Filter>Sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Resource\Mesh.cpp">
+      <Filter>Sources\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Resource\Model.cpp">
+      <Filter>Sources\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Graphics\IRenderCommand.cpp">
+      <Filter>Sources\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Graphics\Renderer.cpp">
+      <Filter>Sources\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Graphics\RenderQueue.cpp">
+      <Filter>Sources\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Graphics\CommandBuffer.cpp">
+      <Filter>Sources\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Graphics\ModelCommand.cpp" />
+    <ClCompile Include="Sources\Graphics\DeviceCommands.cpp" />
+    <ClCompile Include="Sources\Graphics\IEffect.cpp" />
+    <ClCompile Include="Sources\Graphics\ITechnique.cpp" />
+    <ClCompile Include="Sources\Graphics\IPass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\Core\Logger.h">
@@ -132,9 +161,38 @@
     <ClInclude Include="Sources\Platform\Window.h">
       <Filter>Sources\Platform</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\Platform\Time.h" />
-    <ClInclude Include="Sources\Core\Uncopyable.h" />
-    <ClInclude Include="Sources\Graphics\IDevice.h" />
+    <ClInclude Include="Sources\Graphics\IDevice.h">
+      <Filter>Sources\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Platform\Time.h">
+      <Filter>Sources\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Core\Uncopyable.h">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Resource\Mesh.h">
+      <Filter>Sources\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Resource\Model.h">
+      <Filter>Sources\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Graphics\IRenderCommand.h">
+      <Filter>Sources\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Graphics\Renderer.h">
+      <Filter>Sources\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Graphics\RenderQueue.h">
+      <Filter>Sources\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Graphics\CommandBuffer.h">
+      <Filter>Sources\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Graphics\ModelCommand.h" />
+    <ClInclude Include="Sources\Graphics\DeviceCommands.h" />
+    <ClInclude Include="Sources\Graphics\IEffect.h" />
+    <ClInclude Include="Sources\Graphics\ITechnique.h" />
+    <ClInclude Include="Sources\Graphics\IPass.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Sources\Resource\Shaders\Hello.fx">

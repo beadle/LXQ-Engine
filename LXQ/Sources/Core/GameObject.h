@@ -105,7 +105,6 @@ T* GameObject::GetComponent()
 	}
 	else
 		return nullptr;
-
 }
 
 template<class T>

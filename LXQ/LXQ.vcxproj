@@ -84,6 +84,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\Graphics\IPass.cpp" />
+    <ClCompile Include="Sources\Graphics\ITechnique.cpp" />
+    <ClCompile Include="Sources\Graphics\IEffect.cpp" />
+    <ClCompile Include="Sources\Graphics\DeviceCommands.cpp" />
+    <ClCompile Include="Sources\Graphics\ModelCommand.cpp" />
+    <ClCompile Include="Sources\Graphics\CommandBuffer.cpp" />
+    <ClCompile Include="Sources\Graphics\Renderer.cpp" />
+    <ClCompile Include="Sources\Graphics\RenderQueue.cpp" />
+    <ClCompile Include="Sources\Graphics\IRenderCommand.cpp" />
+    <ClCompile Include="Sources\Resource\Mesh.cpp" />
+    <ClCompile Include="Sources\Resource\Model.cpp" />
     <ClCompile Include="Sources\Graphics\IDevice.cpp" />
     <ClCompile Include="Sources\Core\Singleton.cpp" />
     <ClCompile Include="Sources\Engine\Gameplay.cpp" />
@@ -104,6 +115,17 @@
     <ClCompile Include="Sources\Core\Uncopyable.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Sources\Graphics\IPass.h" />
+    <ClInclude Include="Sources\Graphics\ITechnique.h" />
+    <ClInclude Include="Sources\Graphics\IEffect.h" />
+    <ClInclude Include="Sources\Graphics\DeviceCommands.h" />
+    <ClInclude Include="Sources\Graphics\ModelCommand.h" />
+    <ClInclude Include="Sources\Graphics\CommandBuffer.h" />
+    <ClInclude Include="Sources\Graphics\Renderer.h" />
+    <ClInclude Include="Sources\Graphics\RenderQueue.h" />
+    <ClInclude Include="Sources\Graphics\IRenderCommand.h" />
+    <ClInclude Include="Sources\Resource\Mesh.h" />
+    <ClInclude Include="Sources\Resource\Model.h" />
     <ClInclude Include="Sources\Graphics\IDevice.h" />
     <ClInclude Include="Sources\Core\Singleton.h" />
     <ClInclude Include="Sources\Engine\Gameplay.h" />

@@ -12,6 +12,7 @@ public:
 	void Finalize();
 
 	ID3D11Device* GetDevice() const { return _device; }
+	IDXGISwapChain* GetSwapChain() const { return _swapChain; }
 	ID3D11DeviceContext* GetContext() const { return _context; }
 	ID3D11RenderTargetView* GetRenderTargetView() const { return _renderTargetView; }
 	ID3D11DepthStencilView* GetDepthStencilView() const { return _depthStencilView; }
